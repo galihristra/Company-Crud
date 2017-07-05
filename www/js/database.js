@@ -43,7 +43,9 @@ function addNewEmployeeDB(tx){
 };
 
 function txSuccessAddEmp(){
-    navigator.notification.alert("Success !", function(){
-        $.mobile.changePage("empList.html");
-    };
+    navigator.notification.alert("Success !", addEmpSuccess);
+}
+
+function addEmpSuccess(){
+    $.mobile.changePage("empList.html");
 }
