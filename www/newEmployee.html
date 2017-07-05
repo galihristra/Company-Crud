@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    
+    <body>
+        <div id="newEmployee" data-role="page" data-add-back-btn="true" data-theme="b">
+            <div data-role="header" data-position="fixed">
+                <h1>Add New Employee</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form id="newEmployeeForm" method="post" action="js/database.js" onsubmit="addNewEmployee()">
+                    <div class="ui-field-contain">
+                        <div class="">
+                            <label for="addfname" style="text-transform:capitalize;">First Name:</label>
+                            <input type="text" name="addfname" id="addfname" data-clear-btn="true">
+                        </div>
+                        <div>
+                            <label for="addlname" style="text-transform:capitalize;">Last Name:</label>
+                            <input type="text" name="addlname" id="addlname" data-clear-btn="true">
+                        </div>
+                        <div>
+                            <label for="addbdate" style="text-transform:capitalize;">Birth Date:</label>
+                            <input type="date" name="addbdate" id="addbdate">
+                        </div>
+                        <div>
+                            <label for="addemail" style="text-transform:capitalize;">E-Mail:</label>
+                            <input type="email" name="addemail" id="addemail" data-clear-btn="true">
+                        </div>
+                        <div>
+                            <label for="addaddress" style="text-transform:capitalize;">Address:</label>
+                            <input type="text" name="addaddress" id="addaddress" data-clear-btn="true">
+                        </div>
+                    </div>
+                    <input type="submit" value="Add Employee">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
