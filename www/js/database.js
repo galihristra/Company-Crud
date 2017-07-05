@@ -26,6 +26,7 @@ function txSuccess(){
 function addNewEmployee(){
     navigator.notification.confirm("Add This Employee ?", function(buttonPressed){
         if (buttonPressed == 1){
+//            alert('save');
             db = window.openDatabase("abcDB", "0.1", "ABC Company DB", 1000);
             db.transaction(addNewEmployeeDB, txError, txSuccessAddEmp);
         }
@@ -44,6 +45,7 @@ function addNewEmployeeDB(tx){
 
 function txSuccessAddEmp(){
     navigator.notification.alert("Success !", addEmpSuccess);
+//    $.mobile.changePage("empList.html");
 }
 
 function addEmpSuccess(){

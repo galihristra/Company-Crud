@@ -10,12 +10,12 @@ function loadEmpList(tx){
 function txSuccessLoadEmployees(tx, results){
     console.log("Read Employee List Success");
     
-    if(results.row.length){
-        var len = results.row.length;
+    if(results.rows.length){
+        var len = results.rows.length;
         var emp;
         for(var i = 0; i < len; i++){
-            emp = results.row.item(i);
-            $('#empList').append("<li><h4>" + results.item(i).firstname + " " + results.item(i).lastname + "</h4></li>");
+            emp = results.rows.item(i);
+            $('#empList').append("<li><h4>" + emp.firstname + " " + emp.lastname + "</h4></li>");
         }
         $('#empList').listview('refresh');
     }
