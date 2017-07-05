@@ -27,7 +27,7 @@ function addNewEmployee(){
     navigator.notification.confirm("Add This Employee ?", function(buttonPressed){
         if (buttonPressed == 1){
             db = window.openDatabase("abcDB", "0.1", "ABC Company DB", 1000);
-            db.transaction(addNewEmployeeDB, txError, txSuccessFave);
+            db.transaction(addNewEmployeeDB, txError, txSuccessAddEmp);
         }
     }, "Confirm", ["Save", "Cancel"]);
 }
@@ -41,3 +41,9 @@ function addNewEmployeeDB(tx){
     
     tx.executeSql("INSERT INTO employees(firstname, lastname, birthdate, email, address) VALUES (?, ?, ?, ?, ?)", [fname, lname, birthDate, email, address]);
 };
+
+function txSuccessAddEmp(){
+    navigator.notification.alert("Success !", function(){
+        $.mobile.changePage("empList.html");
+    };
+}
